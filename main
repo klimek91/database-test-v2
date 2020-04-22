@@ -1,0 +1,20 @@
+import csv
+
+
+osoby = []
+
+def read():
+    try:
+        plik = open('lista.csv', "r", newline='')
+        csv_reader = csv.reader(plik,delimiter=',')
+        for row in csv_reader:
+            osoba = {'id': int(row[0]), 'imie': row[1], 'pass': row[2]}
+            osoby.append(osoba)
+    except FileNotFoundError:
+        plik = open('lista.csv', 'w', newline='')
+        plik.close()
+
+def add_user():
+    plik = open('lista.csv', "a", newline='')
+    csv_writer = csv.writer(plik, delimiter=',')
+    csv_writer.writerow([1,"Damian",112421])
