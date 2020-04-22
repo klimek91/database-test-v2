@@ -14,10 +14,10 @@ def read():
         plik = open('lista.csv', 'w', newline='')
         plik.close()
 
-def add_user():
+def add_user(name):
     plik = open('lista.csv', "a", newline='')
     csv_writer = csv.writer(plik, delimiter=',')
-    csv_writer.writerow([1,"Damian",112421])
+    csv_writer.writerow([1,name,112421])
 
 pytanie1 = True
 pytanie2 = True
@@ -38,7 +38,7 @@ while pytanie2:
     if dodanie.lower() == 'y':
         print('dodaje liste')
         podaj = input("Podaj imie uzytkownika: ")
-        add_user()
+        add_user(podaj)
         print('dodac osobe, + wyswietlic jej dodane dane')
         pytanie2 = False
     elif dodanie.lower() == 'n':
