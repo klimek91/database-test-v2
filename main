@@ -19,14 +19,14 @@ def read():
 def add_user(name):
     plik = open('lista.csv', "a", newline='')
     csv_writer = csv.writer(plik, delimiter=',')
-    csv_writer.writerow([1,name,112421])
+    csv_writer.writerow([len(osoby),name,pass_gen()])
 
 def pass_gen():
     password = ''
     char = string.ascii_letters + string.digits
     for letter in range(10):
         password += random.choice(char)
-
+    return password
 
 
 pytanie1 = True
