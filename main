@@ -1,7 +1,7 @@
 import csv
 import string
 import random
-
+print(type('halo'))
 osoby = []
 
 def read():
@@ -57,13 +57,14 @@ while pytanie2:
     if dodanie.lower() == 'y':
         print('dodaje liste')
         podaj = input("Podaj imie uzytkownika: ")
-        add_user(podaj)
-        czyt_osob()
-        pytanie2 = False
+        while type(podaj) != str:
+            add_user(podaj)
+            czyt_osob()
+            pytanie2 = False
+        else:
+            print('Podales niepoprawne imie')
     elif dodanie.lower() == 'n':
         print('ok bye break')
         break
     else:
         print('Choose Y or N !')
-
-
